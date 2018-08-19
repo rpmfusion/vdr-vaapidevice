@@ -6,7 +6,7 @@
 
 Name:           vdr-vaapidevice
 Version:        0.7.0
-Release:        7.%{gitdate}git%{shortcommit0}%{?dist}
+Release:        8.%{gitdate}git%{shortcommit0}%{?dist}
 Summary:        A VA-API output device plugin for VDR
 
 License:        AGPLv3
@@ -71,6 +71,9 @@ install -Dpm 644 %{SOURCE1} \
 %config(noreplace) %{_sysconfdir}/sysconfig/vdr-plugins.d/vaapidevice.conf
 
 %changelog
+* Sun Aug 19 2018 Leigh Scott <leigh123linux@googlemail.com> - 0.7.0-8.20180401gita17c110
+- Rebuilt for Fedora 29 Mass Rebuild binutils issue
+
 * Fri Jul 27 2018 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 0.7.0-7.20180401gita17c110
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
 
