@@ -1,12 +1,12 @@
-# https://github.com/pesintta/vdr-plugin-vaapidevice/commit/a17c11072e7f9465f12830e6d3045956d4cb2776
-%global commit0 a17c11072e7f9465f12830e6d3045956d4cb2776
+# https://github.com/pesintta/vdr-plugin-vaapidevice/commit/d19657bae399e79df107e316ca40922d21393f80
+%global commit0 d19657bae399e79df107e316ca40922d21393f80
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global sname vdr-plugin-vaapi
-%global gitdate 20180401
+%global gitdate 20190526
 
 Name:           vdr-vaapidevice
 Version:        0.7.0
-Release:        11.%{gitdate}git%{shortcommit0}%{?dist}
+Release:        12.%{gitdate}git%{shortcommit0}%{?dist}
 Summary:        A VA-API output device plugin for VDR
 
 License:        AGPLv3
@@ -71,6 +71,9 @@ install -Dpm 644 %{SOURCE1} \
 %config(noreplace) %{_sysconfdir}/sysconfig/vdr-plugins.d/vaapidevice.conf
 
 %changelog
+* Fri Jun 28 2019 Martin Gansser <martinkg@fedoraproject.org> - 0.7.0-12.20190526gitd19657b
+- Update to 0.7.0-12.20190526gitd19657b
+
 * Tue Jun 18 2019 Martin Gansser <martinkg@fedoraproject.org> - 0.7.0-11.20180401gita17c110
 - Rebuilt for new VDR API version
 
