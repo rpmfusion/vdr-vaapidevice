@@ -6,7 +6,7 @@
 
 Name:           vdr-vaapidevice
 Version:        0.7.0
-Release:        12.%{gitdate}git%{shortcommit0}%{?dist}
+Release:        13.%{gitdate}git%{shortcommit0}%{?dist}
 Summary:        A VA-API output device plugin for VDR
 
 License:        AGPLv3
@@ -71,6 +71,9 @@ install -Dpm 644 %{SOURCE1} \
 %config(noreplace) %{_sysconfdir}/sysconfig/vdr-plugins.d/vaapidevice.conf
 
 %changelog
+* Sun Jun 30 2019 Martin Gansser <martinkg@fedoraproject.org> - 0.7.0-13.20190526gitd19657b
+- Rebuilt for new VDR API version
+
 * Fri Jun 28 2019 Martin Gansser <martinkg@fedoraproject.org> - 0.7.0-12.20190526gitd19657b
 - Update to 0.7.0-12.20190526gitd19657b
 
