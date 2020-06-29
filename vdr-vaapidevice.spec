@@ -6,7 +6,7 @@
 
 Name:           vdr-vaapidevice
 Version:        0.7.0
-Release:        17.%{gitdate}git%{shortcommit0}%{?dist}
+Release:        18.%{gitdate}git%{shortcommit0}%{?dist}
 Summary:        A VA-API output device plugin for VDR
 
 License:        AGPLv3
@@ -14,6 +14,7 @@ URL:            https://github.com/pesintta/vdr-plugin-vaapidevice
 Source0:        %{url}/archive/%{commit0}/%{sname}-%{shortcommit0}.tar.gz
 # Configuration files for plugin parameters. These are Fedora specific and not in upstream.
 Source1:        %{name}.conf
+Patch0:         %{name}-undefined-symbol.patch
 
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
@@ -49,7 +50,7 @@ A VA-API output device plugin for VDR.
 
 
 %prep
-%setup -qn vdr-plugin-vaapidevice-%{commit0}
+%autosetup -p0 -n vdr-plugin-vaapidevice-%{commit0}
 
 # remove .git files
 rm -f .indent.pro .gitignore .dependencies
@@ -71,6 +72,9 @@ install -Dpm 644 %{SOURCE1} \
 %config(noreplace) %{_sysconfdir}/sysconfig/vdr-plugins.d/vaapidevice.conf
 
 %changelog
+* Mon Jun 29 2020 Martin Gansser <martinkg@fedoraproject.org> - 0.7.0-18.20190526gitd19657b
+- Add patch %%{name}-undefined-symbol.patch fixes (BZ#5686)
+
 * Sat Feb 22 2020 RPM Fusion Release Engineering <leigh123linux@googlemail.com> - 0.7.0-17.20190526gitd19657b
 - Rebuild for ffmpeg-4.3 git
 
